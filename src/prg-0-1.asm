@@ -5002,35 +5002,33 @@ TitleLayout:
 	.db $23, $77, $04, $9C, $9D, $AA, $AB
 	.db $23, $89, $02, $AA, $AB
 
-	; SUPER
+	; SUPER [BR]
 	;                  SSSSSSSS  UUUUUUUU  PPPPPPPP  EEEEEEEE  RRRRRRRR
 	.db $20, $CB, $0A, $00, $01, $08, $08, $FC, $01, $FC, $08, $FC, $01
 	.db $20, $EB, $0A, $02, $03, $08, $08, $0A, $05, $0B, $0C, $0A, $0D
 	.db $21, $0B, $0A, $04, $05, $04, $05, $0E, $07, $FC, $08, $0E, $08
-	.db $21, $2B, $05, $06, $07, $06, $07, $09
-	.db $21, $31, $04, $76, $09, $09, $09
+	.db $21, $2B, $0A, $78, $79, $06, $07, $09, $FB, $76, $09, $09, $09
 
 	; TM
-	;                  TTT  MMM
-	.db $21, $38, $02, $F9, $FA
+	;                  TTT  MMM - removed
 
 	; MARIO
 	;                  MMMMMMMMMMMMM  AAAAAAAA  RRRRRRRR  III  OOOOOOOO
-	.db $21, $46, $0A, $00, $0F, $01, $00, $01, $FC, $01, $08, $00, $01
-	.db $21, $66, $0A, $10, $10, $08, $10, $08, $10, $08, $08, $10, $08
-	.db $21, $86, $0A, $08, $08, $08, $08, $08, $13, $0D, $08, $08, $08
-	.db $21, $A6, $0A, $08, $08, $08, $FC, $08, $0E, $08, $08, $08, $08
-	.db $21, $C6, $0A, $08, $08, $08, $10, $08, $08, $08, $08, $04, $05
-	.db $21, $E6, $0A, $09, $09, $09, $09, $09, $09, $09, $09, $06, $07
+	.db $21, $52, $0A, $00, $0F, $01, $00, $01, $FC, $01, $08, $00, $01
+	.db $21, $72, $0A, $10, $10, $08, $10, $08, $10, $08, $08, $10, $08
+	.db $21, $92, $4A, $08,     $21, $97, $02,  $13, $0D
+	.db $21, $B2, $0A, $08, $08, $08, $FC, $08, $0E, $08, $08, $08, $08
+	.db $21, $D2, $0A, $08, $08, $08, $10, $08, $08, $08, $08, $04, $05
+	.db $21, $F2, $48, $09,                    $21, $FA, $02,  $06, $07
 
-	; BROS
-	;                  BBBBBBBB  RRRRRRRR  OOOOOOOO  SSSSSSSS
-	.db $21, $51, $08, $FC, $01, $FC, $01, $00, $01, $00, $01 ; BROS
-	.db $21, $71, $08, $10, $08, $10, $08, $10, $08, $10, $08
-	.db $21, $91, $08, $13, $0D, $13, $0D, $08, $08, $77, $03
-	.db $21, $B1, $08, $0E, $08, $0E, $08, $08, $08, $12, $08
-	.db $21, $D1, $09, $13, $05, $08, $08, $04, $05, $04, $05, $08
-	.db $21, $F1, $09, $11, $07, $09, $09, $06, $07, $06, $07, $09
+	; BROS - IRMÃOS
+	;                  III  RRRRRRRR  MMMMMMMMMMMMM  ÃAAAAAAA  OOOOOOOO  SSSSSSSS
+	.db $21, $45, $0C, $08, $FC, $01, $00, $0F, $01, $7A, $7B, $00, $01, $00, $01
+	.db $21, $65, $0C, $08, $10, $08, $10, $10, $08, $10, $08, $10, $08, $10, $08
+	.db $21, $85, $0C, $08, $13, $0D, $08, $08, $08, $08, $08, $08, $08, $77, $03
+	.db $21, $A5, $0C, $08, $0E, $08, $08, $08, $08, $FC, $08, $08, $08, $12, $08
+	.db $21, $C5, $46, $08,          $21, $CB, $06,  $10, $08, $04, $05, $04, $05
+	.db $21, $E5, $48, $09,                    $21, $ED, $04,  $06, $07, $06, $07
 
 	; 2
 	;             22222222222222222222222
@@ -5042,14 +5040,22 @@ TitleLayout:
 
 	; (C) 1988
 	;                  (C)  111  999  888  888
-	.db $22, $E9, $05, $F8, $D1, $D9, $D8, $D8 ; (C) 1988
+	.db $22, $E9, $0E, $F8, $D1, $D9, $D8, $D8 ; (C) 1988
 
 	; NINTENDO
-	;                  NNN  III  NNN  TTT  EEE  NNN  DDD  OOO
-	.db $22, $EF, $08, $E7, $E2, $E7, $ED, $DE, $E7, $DD, $E8
+	;        NNN  III  NNN  TTT  EEE  NNN  DDD  OOO
+	.db $FB, $E7, $E2, $E7, $ED, $DE, $E7, $DD, $E8
+
+	; br 2020
+	;                   br  222  000  222  000
+	.db $20, $44, $18, $11, $C2, $C3, $C2, $C3
+
+	; BMATSANTOS
+	;        BBB  MMM  AAA  TTT  SSS  AAA  NNN  TTT  OOO  SSS  ,,,       KKK  OOO  SSS  MMM  UUU  SSS
+	.db $FD, $C4, $C5, $C6, $C7, $C8, $C6, $C9, $C7, $CA, $C8, $CB, $FD, $CC, $CA, $C8, $C5, $CD, $C8
 
 	.db $23, $CA, $04, $80, $A0, $A0, $20
-	.db $23, $D1, $0E, $80, $A8, $AA, $AA, $A2, $22, $00, $00, $88, $AA, $AA, $AA, $AA, $22
+	.db $23, $D1, $0E, $A0, $A8, $AA, $AA, $AA, $A2, $00, $00, $AA, $AA, $AA, $AA, $AA, $AA
 	.db $23, $E3, $02, $88, $22
 	.db $23, $EA, $04, $F0, $F8, $F2, $F0
 	.db $00
@@ -5071,7 +5077,7 @@ TitleSpritePalettes:
 	.db $22, $30, $23, $0F
 
 TitleStoryText_STORY:
-	.db $EC, $ED, $E8, $EB, $F2 ; STORY
+	.db $E1, $E2, $EC, $ED, $FA, $EB, $E2, $DA ; [BR] STORY
 
 TitleStoryTextPointersHi:
 	.db >TitleStoryText_Line01
@@ -5111,69 +5117,69 @@ TitleStoryTextPointersLo:
 	.db <TitleStoryText_Line15
 	.db <TitleStoryText_Line16
 
-TitleStoryText_Line01:
-	.db $F0, $E1, $DE, $E7, $FB, $FB, $E6, $DA, $EB, $E2, $E8, $FB, $E8, $E9, $DE, $E7
-	.db $DE, $DD, $FB, $DA ; WHEN MARIO OPENED A
+TitleStoryText_Line01: ; [BR]
+	.db $DE, $E6, $FB, $EE, $E6, $FB, $FB, $EC, $E8, $E7, $E1, $E8, $F7, $FB, $E6, $DA
+	.db $EB, $E2, $E8, $F7 ; WHEN MARIO OPENED A
 
 TitleStoryText_Line02:
-	.db $DD, $E8, $E8, $EB, $FB, $DA, $DF, $ED, $DE, $EB, $FB, $FB, $DC, $E5, $E2, $E6
-	.db $DB, $E2, $E7, $E0 ; DOOR AFTER CLIMBING
+	.db $DA, $E9, $FA, $EC, $FB, $EC, $EE, $DB, $E2, $EB, $FB, $EE, $E6, $DA, $FB, $E5
+	.db $E8, $E7, $E0, $DA ; DOOR AFTER CLIMBING
 
 TitleStoryText_Line03:
-	.db $DA, $FB, $E5, $E8, $E7, $E0, $FB, $EC, $ED, $DA, $E2, $EB, $FB, $E2, $E7, $FB
-	.db $FB, $E1, $E2, $EC ; A LONG STAIR IN HIS
+	.db $DE, $EC, $DC, $DA, $DD, $DA, $EB, $E2, $DA, $FB, $FB, $DE, $FB, $FB, $FB, $DA
+	.db $DB, $EB, $E2, $EB ; A LONG STAIR IN HIS
 
 TitleStoryText_Line04:
-	.db $DD, $EB, $DE, $DA, $E6, $F7, $FB, $DA, $E7, $E8, $ED, $E1, $DE, $EB, $FB, $F0
-	.db $E8, $EB, $E5, $DD ; DREAM, ANOTHER WORLD
+	.db $EE, $E6, $DA, $FB, $E9, $E8, $EB, $ED, $DA, $F7, $FB, $EF, $E2, $EE, $FB, $E8
+	.db $EE, $ED, $EB, $E8 ; DREAM, ANOTHER WORLD
 
 TitleStoryText_Line05:
-	.db $EC, $E9, $EB, $DE, $DA, $DD, $FB, $FB, $FB, $DB, $DE, $DF, $E8, $EB, $DE, $FB
-	.db $FB, $E1, $E2, $E6 ; SPREAD BEFORE HIM
+	.db $E6, $EE, $E7, $DD, $E8, $FB, $DD, $E2, $DA, $E7, $ED, $DE, $FB, $DD, $DE, $E5
+	.db $DE, $F6, $FB, $FB ; SPREAD BEFORE HIM
 
 TitleStoryText_Line06:
-	.db $DA, $E7, $DD, $FB, $E1, $DE, $FB, $E1, $DE, $DA, $EB, $DD, $FB, $DA, $FB, $EF
-	.db $E8, $E2, $DC, $DE ; AND HE HEARD A VOICE
+	.db $EE, $E6, $DA, $FB, $FB, $EF, $E8, $F3, $FB, $FB, $E5, $E1, $DE, $FB, $FB, $E9
+	.db $DE, $DD, $E2, $EE ; AND HE HEARD A VOICE
 
 TitleStoryText_Line07:
-	.db $DC, $DA, $E5, $E5, $FB, $DF, $E8, $EB, $FB, $E1, $DE, $E5, $E9, $FB, $ED, $E8
-	.db $FB, $FB, $DB, $DE ; CALL FOR HELP TO BE
+	.db $DA, $E3, $EE, $DD, $DA, $FB, $E9, $DA, $EB, $DA, $FB, $EC, $DE, $FB, $E5, $E2
+	.db $EF, $EB, $DA, $EB ; CALL FOR HELP TO BE
 
 TitleStoryText_Line08:
-	.db $FB, $DF, $EB, $DE, $DE, $DD, $FB, $FB, $DF, $EB, $E8, $E6, $FB, $DA, $FB, $EC
-	.db $E9, $DE, $E5, $E5 ; FREED FROM A SPELL
+	.db $FB, $DD, $DE, $FB, $EE, $E6, $FB, $DF, $DE, $E2, $ED, $E2, $F9, $E8, $F6, $FB
+	.db $FB, $FB, $FB, $FB ; FREED FROM A SPELL
 
 TitleStoryText_Line09:
-	.db $DA, $DF, $ED, $DE, $EB, $FB, $FB, $DA, $F0, $DA, $E4, $DE, $E7, $E2, $E7, $E0
-	.db $F7, $FB, $FB, $FB ; AFTER AWAKENING,
+	.db $E7, $DA, $FB, $FB, $E6, $DA, $E7, $E1, $CE, $FB, $FB, $EC, $DE, $E0, $EE, $E2
+	.db $E7, $ED, $DE, $F7 ; AFTER AWAKENING,
 
 TitleStoryText_Line10:
-	.db $E6, $DA, $EB, $E2, $E8, $FB, $FB, $F0, $DE, $E7, $ED, $FB, $ED, $E8, $FB, $FB
-	.db $DA, $FB, $FB, $FB ; MARIO WENT TO A
+	.db $E6, $DA, $EB, $E2, $E8, $FB, $DE, $FB, $DC, $E2, $DA, $F6, $FB, $DF, $E8, $EB
+	.db $DA, $E6, $FB, $DA ; MARIO WENT TO A
 
 TitleStoryText_Line11:
-	.db $DC, $DA, $EF, $DE, $FB, $FB, $E7, $DE, $DA, $EB, $DB, $F2, $FB, $DA, $E7, $DD
-	.db $FB, $FB, $ED, $E8 ; CAVE NEARBY AND TO
+	.db $EE, $E6, $DA, $FB, $DC, $DA, $EF, $DE, $EB, $E7, $DA, $FB, $E9, $EB, $FA, $F1
+	.db $E2, $E6, $DA, $F6 ; CAVE NEARBY AND TO
 
 TitleStoryText_Line12:
-	.db $E1, $E2, $EC, $FB, $FB, $EC, $EE, $EB, $E9, $EB, $E2, $EC, $DE, $FB, $E1, $DE
-	.db $FB, $EC, $DA, $F0 ; HIS SURPRISE HE SAW
+	.db $DE, $EC, $E9, $DA, $E7, $ED, $E8, $EC, $DA, $E6, $DE, $E7, $ED, $DE, $F7, $FB
+	.db $E7, $DE, $E5, $DA ; HIS SURPRISE HE SAW
 
 TitleStoryText_Line13:
-	.db $DE, $F1, $DA, $DC, $ED, $E5, $F2, $FB, $FB, $F0, $E1, $DA, $ED, $FB, $E1, $DE
-	.db $FB, $EC, $DA, $F0 ; EXACTLY WHAT HE SAW
+	.db $E1, $DA, $EF, $E2, $DA, $FB, $ED, $EE, $DD, $E8, $FB, $EA, $EE, $DE, $FB, $E6
+	.db $DA, $EB, $E2, $E8 ; EXACTLY WHAT HE SAW
 
 TitleStoryText_Line14:
-	.db $E2, $E7, $FB, $E1, $E2, $EC, $FB, $DD, $EB, $DE, $DA, $E6, $CF, $CF, $CF, $CF
-	.db $FB, $FB, $FB, $FB ; IN HIS DREAM....
+	.db $EF, $E2, $EE, $FB, $E7, $E8, $FB, $EC, $DE, $EE, $FB, $EC, $E8, $E7, $E1, $E8
+	.db $CF, $CF, $CF, $FB ; IN HIS DREAM....
 
 TitleStoryText_Line15:
 	.db $FB, $FB, $FB, $FB, $FB, $FB, $FB, $FB, $FB, $FB, $FB, $FB, $FB, $FB, $FB, $FB
 	.db $FB, $FB, $FB, $FB ; (blank)
 
 TitleStoryText_Line16:
-	.db $FB, $FB, $E9, $EE, $EC, $E1, $FB, $EC, $ED, $DA, $EB, $ED, $FB, $DB, $EE, $ED
-	.db $ED, $E8, $E7, $FB ; PUSH START BUTTON
+	.db $FB, $FB, $FB, $FB, $DA, $E9, $DE, $EB, $ED, $DE, $FB, $EC, $ED, $DA, $EB, $ED
+	.db $FB, $FB, $FB, $FB ; PUSH START BUTTON
 
 TitleAttributeData1:
 	.db $23, $CB, $42, $FF
@@ -5288,13 +5294,15 @@ loc_BANK0_9ABB:
 	JMP loc_BANK0_9B4D
 
 ; ---------------------------------------------------------------------------
+; Clear logo and copyright before printing the story text
 
-loc_BANK0_9AC6:
+loc_BANK0_9AC6: ; Bigger rows
 	DEC byte_RAM_2
 	LDA byte_RAM_2
 	CMP #$06
-	BNE loc_BANK0_9B4D
-
+	BEQ loc_9AC6_pt2 ;[BR] Out of range dodging
+	JMP loc_BANK0_9B4D
+loc_9AC6_pt2:
 	INC ObjectXHi + 2
 	LDA PlayerXHi
 	STA PPUBuffer_301
@@ -5306,23 +5314,56 @@ loc_BANK0_9AC6:
 	STA ObjectXHi
 	LDA #$54
 	STA ObjectXHi + 1
-	LDA #$0FB
+	LDA #$FB ; Empty tile
 	STA PPUBuffer_301 + 3
 	LDA #$00
 	STA PPUBuffer_301 + 4
-	BEQ loc_BANK0_9B4D
+	BNE loc_BANK0_9AF3 ;[BR] Out of range dodging
+	JMP loc_BANK0_9B4D
 
-loc_BANK0_9AF3:
+loc_BANK0_9AF3: ; Smaller row
 	LDA PlayerXHi
 	STA PPUBuffer_301
 	LDA ObjectXHi
 	STA PPUBuffer_301 + 1
 	LDA ObjectXHi + 1
 	STA PPUBuffer_301 + 2
-	LDA #$0FB
+	LDA #$FB ; Empty tile
 	STA PPUBuffer_301 + 3
-	LDA #$00
+	LDA #$21 ; [BR] New erasers for the wider logo
 	STA PPUBuffer_301 + 4
+	LDA #$45
+	STA PPUBuffer_301 + 5
+	LDA #$C6
+	STA PPUBuffer_301 + 6
+	LDA #$FB ; Empty tile
+	STA PPUBuffer_301 + 7
+	LDA #$21
+	STA PPUBuffer_301 + 8
+	LDA #$5A
+	STA PPUBuffer_301 + 9
+	LDA #$C6
+	STA PPUBuffer_301 + 10
+	LDA #$FB ; Empty tile
+	STA PPUBuffer_301 + 11
+	LDA #$21
+	STA PPUBuffer_301 + 12
+	LDA #$5B
+	STA PPUBuffer_301 + 13
+	LDA #$C6
+	STA PPUBuffer_301 + 14
+	LDA #$FB ; Empty tile
+	STA PPUBuffer_301 + 15
+	LDA #$20 ; Translation credit eraser
+	STA PPUBuffer_301 + 16
+	LDA #$44
+	STA PPUBuffer_301 + 17
+	LDA #$58
+	STA PPUBuffer_301 + 18
+	LDA #$FD ; Empty tile
+	STA PPUBuffer_301 + 19
+	LDA #$00
+	STA PPUBuffer_301 + 20
 	LDA ObjectXHi
 	CLC
 	ADC #$20
@@ -5340,7 +5381,7 @@ loc_BANK0_9B1B:
 	LDX #$17
 	LDY #$00
 
-loc_BANK0_9B25:
+loc_BANK0_9B25: ; Set attributes for story text
 	LDA TitleAttributeData1, Y
 	STA PPUBuffer_301 + 4, Y
 	INY
@@ -5406,14 +5447,14 @@ loc_BANK0_9B63:
 
 ; ---------------------------------------------------------------------------
 
-TitleScreen_WriteSTORYText:
+TitleScreen_WriteSTORYText:; [BR]
 	LDA #$20
 	STA PPUBuffer_301
-	LDA #$0AE
+	LDA #$AC
 	STA PPUBuffer_301 + 1
-	LDA #$05 ; Length of STORY text (5 bytes)
+	LDA #$08 ; Length of STORY text (5 bytes -> 8)
 	STA PPUBuffer_301 + 2
-	LDY #$04 ; Bytes to copy minus one (5-1=4)
+	LDY #$07 ; Bytes to copy (5 -> 8) minus one
 
 TitleScreen_WriteSTORYTextLoop:
 	LDA TitleStoryText_STORY, Y ; Copy STORY text to PPU write buffer
@@ -5421,8 +5462,8 @@ TitleScreen_WriteSTORYTextLoop:
 	DEY
 	BPL TitleScreen_WriteSTORYTextLoop
 
-	LDA #$00 ; Terminate STORY text in buffer
-	STA PPUBuffer_301 + 8
+	LDA #$00 ; Terminate STORY text in buffer (Updated buffer position)
+	STA PPUBuffer_301 + 11
 
 loc_BANK0_9B93:
 	INC ObjectXHi + 3
@@ -5449,7 +5490,7 @@ loc_BANK0_9BB0:
 
 loc_BANK0_9BB2:
 	STA PPUBuffer_301 + 1
-	LDA #$14
+	LDA #$14 ; Story text strings length
 	STA PPUBuffer_301 + 2
 	LDX ObjectXHi + 3
 	DEX
@@ -6174,7 +6215,8 @@ EndingCelebrationCeilingTextAndPodium:
 	.db $21, $08, $01, $5B
 	.db $21, $09, $4E, $9A
 	.db $21, $17, $01, $5D
-	.db $20, $AB, $0B, $DC, $E8, $E7, $ED, $EB, $E2, $DB, $EE, $ED, $E8, $EB
+	;[BR] Contribuitor
+	.db $20, $AA, $0C, $DC, $E8, $E7, $ED, $EB, $E2, $DB, $EE, $E2, $F8, $7C, $E8
 	.db $20, $E3, $04, $40, $42, $44, $46
 	.db $20, $F9, $04, $40, $42, $44, $46
 	.db $21, $23, $C9, $48
@@ -7054,20 +7096,20 @@ ContributorTicker_Exit:
 	RTS
 
 
-EndingCelebrationText_MARIO:
-	.db $20, $ED, $08, $E6, $DA, $EB, $E2, $E8, $FB, $FB, $FB
+EndingCelebrationText_MARIO: ; [BR]
+	.db $20, $EC, $08, $FB, $FB, $E6, $DA, $EB, $E2, $E8, $FB
 	.db $00
 
 EndingCelebrationText_PRINCESS:
-	.db $20, $ED, $08, $E9, $EB, $E2, $E7, $DC, $DE, $EC, $EC
+	.db $20, $EC, $08, $E9, $EB, $E2, $E7, $DC, $DE, $EC, $DA
 	.db $00
 
 EndingCelebrationText_TOAD:
-	.db $20, $ED, $08, $ED, $E8, $DA, $DD, $FB, $FB, $FB, $FB
+	.db $20, $EC, $08, $FB, $FB, $ED, $E8, $DA, $DD, $FB, $FB
 	.db $00
 
 EndingCelebrationText_LUIGI:
-	.db $20, $ED, $08, $E5, $EE, $E2, $E0, $E2, $FB, $FB, $FB
+	.db $20, $EC, $08, $FB, $FB, $E5, $EE, $E2, $E0, $E2, $FB
 	.db $00
 
 

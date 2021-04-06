@@ -51,10 +51,14 @@ ScreenUpdateBufferPointers:
 	.dw PPUBuffer_PauseExtraLife
 	.dw PPUBuffer_BonusChanceLayout
 
-PPUBuffer_CharacterSelect:
-	.db $21, $49, $06, $E9, $E5, $DE, $DA, $EC, $DE ; PLEASE
-	.db $21, $50, $06, $EC, $DE, $E5, $DE, $DC, $ED ; SELECT
-	.db $21, $8C, $06, $E9, $E5, $DA, $F2, $DE, $EB ; PLAYER
+PPUBuffer_CharacterSelect: ;[BR]
+	.db $21, $0B, $0A ; PLEASE
+	.db $E9, $E8, $EB, $FB, $DF, $DA, $EF, $E8, $EB, $F7
+	.db $21, $4C, $07 ; SELECT
+	.db $DE, $EC, $DC, $E8, $E5, $E1, $DA
+	.db $21, $89, $0E ; PLAYER
+	.db $EE, $E6, $DA, $FB, $E9, $DE, $EB, $EC, $E8, $E7, $DA, $E0, $DE, $E6
+	; ..
 	.db $20, $00, $20, $B7, $B8, $B7, $B8, $B7, $B8, $B7, $B8, $B7, $B8, $B7, $B8 ; Probably the checkerboard diamonds or w/e
 	.db $B7, $B8, $B7, $B8, $B7, $B8, $B7, $B8, $B7, $B8, $B7, $B8, $B7, $B8, $B7 ; $F
 	.db $B8, $B7, $B8, $B7, $B8 ; $1E
@@ -117,8 +121,8 @@ PPUBuffer_TitleCard:
 	.db $23, $C0, $09
 	.db $3E, $0E, $0E, $0E, $0E, $0E, $0E, $8E, $32
 	.db $23, $CF, $01, $8C
-	.db $23, $D0, $10
-	.db $32, $00, $A0, $A0, $A0, $20, $00, $8C, $32, $00, $00, $0A, $02, $00, $00, $8C
+	.db $23, $D0, $10 ;[BR] Expanded text colors
+	.db $32, $00, $AA, $AA, $AA, $AA, $00, $8C, $32, $00, $0A, $0A, $0A, $0A, $00, $8C
 	.db $23, $E0, $09
 	.db $32, $00, $00, $0E, $00, $00, $00, $8C, $32
 	.db $23, $EF, $01, $8C
@@ -1391,9 +1395,9 @@ loc_BANKF_E6EF:
 	DEY
 	BPL loc_BANKF_E6EF
 
-	; Hide the bullet for RETRY
+	; Hide the bullet for RETRY [BR]
 	LDA #$FB
-	STA PPUBuffer_ContinueRetryText + 20
+	STA PPUBuffer_ContinueRetryText + 21
 	; Update the number of continues
 	LDA Continues
 	CLC
@@ -1889,18 +1893,18 @@ DisableNMI:
 	RTS
 
 
-PPUBuffer_Text_Game_Over:
-	.db $21, $CB, $0A
-	.db $E0, $DA, $E6, $DE, $FB, $FB, $E8, $EF, $DE, $EB ; GAME OVER
+PPUBuffer_Text_Game_Over: ;[BR]
+	.db $21, $CB, $0B
+	.db $DF, $E2, $E6, $FB, $DD, $DE, $FB, $E3, $E8, $E0, $E8 ; GAME OVER
 	.db $00
 
 PPUBuffer_Text_Continue:
-	.db $21, $75, $01, $00 ; (Placeholder for continue count)
-	.db $21, $6A, $0A, $F6, $FB, $DC, $E8, $E7, $ED, $E2, $E7, $EE, $DE ; * CONTINUE
+	.db $21, $76, $01, $00 ; (Placeholder for continue count)
+	.db $21, $6A, $0B, $F6, $FB, $DC, $E8, $E7, $ED, $E2, $E7, $EE, $DA, $EB ; * CONTINUE
 
 PPUBuffer_Text_Retry:
-	.db $21, $AA, $07, $F6, $FB, $EB, $DE, $ED, $EB, $F2 ; * RETRY
-	.db $21, $CB, $0A, $FB, $FB, $FB, $FB, $FB, $FB, $FB, $FB, $FB, $FB ; Blank, erases "GAME OVER"
+	.db $21, $AA, $06, $F6, $FB, $EC, $DA, $E2, $EB ; * RETRY
+	.db $21, $CB, $0B, $FB, $FB, $FB, $FB, $FB, $FB, $FB, $FB, $FB, $FB, $FB ; Blank, erases "GAME OVER"
 	.db $00
 
 BonusChanceUpdateBuffer_BONUS_CHANCE_Unused:

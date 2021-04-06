@@ -1422,13 +1422,15 @@ byte_RAM_588:
 	.dsb 1 ; $0596
 	.dsb 1 ; $0597
 	.dsb 1 ; $0598
-byte_RAM_599:
+; [BR] The next labels up until PseudoRNGValue were moved to
+; 1 byte later in order to accomodate the bigger EXTRA LIFE string
 	.dsb 1 ; $0599
-byte_RAM_59A:
+byte_RAM_599:
 	.dsb 1 ; $059a
+byte_RAM_59A:
 	.dsb 1 ; $059b
-unk_RAM_59C:
 	.dsb 1 ; $059c
+unk_RAM_59C:
 	.dsb 1 ; $059d
 	.dsb 1 ; $059e
 	.dsb 1 ; $059f
@@ -1444,15 +1446,15 @@ unk_RAM_59C:
 	.dsb 1 ; $05a9
 	.dsb 1 ; $05aa
 	.dsb 1 ; $05ab
+	.dsb 1 ; $05ac
 
 PseudoRNGSeed:
-	.dsb 1 ; $05ac
 	.dsb 1 ; $05ad
-PseudoRNGValue:
 	.dsb 1 ; $05ae
+PseudoRNGValue:
 	.dsb 1 ; $05af
-
 	.dsb 1 ; $05b0
+
 	.dsb 1 ; $05b1
 	.dsb 1 ; $05b2
 	.dsb 1 ; $05b3
@@ -2127,9 +2129,9 @@ TitleCard_ExtraLife_DrawAddress = $7180
 TitleCard_Lives = $7191
 
 PPUBuffer_WarpToWorld = $7194
-WarpToWorld_World = $71a6
+WarpToWorld_World = $71a6+6 ; [BR] accomodating bigger WARP string
 
-PPUBuffer_ContinueRetryBullets = $71a8
+PPUBuffer_ContinueRetryBullets = $71a8+6 ; [BR] accomodating bigger WARP string
 
 ; Copied from bank A
 FlyingCarpetAcceleration_RAM = $71cc

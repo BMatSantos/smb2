@@ -98,13 +98,16 @@ BonusChanceLayout:
 	.db $23, $64, $05, $95, $97, $FD, $AA, $AB
 	.db $23, $77, $05, $9C, $9D, $AA, $AB, $AB
 	.db $23, $89, $02, $AA, $AB
-	.db $20, $C9, $0E, $78, $AC, $B0, $B4, $B7, $BA, $FB, $BC, $BE, $C1, $C4, $C7, $CB, $7C
+	; [BR] BONUS CHANCE title
+	.db $20, $B2, $01, $C3
+	.db $20, $C9, $0E
+	.db $78, $AC, $B0, $B4, $B7, $BA, $BD, $FB, $BF, $C1, $C4, $C7, $CB, $7C
 
 	.db $20, $E8, $10
-	.db $1C, $79, $AD, $B1, $B5, $B8, $BB, $FB, $BD, $BF, $C2, $C5, $C8, $CC, $7D, $1E
+	.db $1C, $79, $AD, $B1, $B5, $B8, $BB, $BE, $FB, $C0, $C2, $C5, $C8, $CC, $7D, $1E
 
 	.db $21, $08, $10
-	.db $1D, $7A, $AE, $B2, $B6, $B9, $FB, $FB, $FB, $C0, $C3, $C6, $C9, $CD, $7E, $1F
+	.db $1D, $7A, $AE, $B2, $B6, $B9, $BC, $FB, $FB, $FB, $CA, $C6, $C9, $CD, $7E, $1F
 
 	.db $21, $29, $03, $7B, $AF, $B3
 	.db $21, $34, $03, $CA, $CE, $7F
@@ -560,10 +563,10 @@ PlayerSelectPalettes:
 BonusChanceText_X_1:
 	.db $22, $30, $03
 	.db $EA, $FB, $D1
-BonusChanceText_EXTRA_LIFE_1:
-	.db $22, $C9, $0F
-	.db $DE, $F1, $ED, $EB, $DA, $FB, $E5, $E2, $DF, $DE ; EXTRA LIFE
-	.db $F9, $F9, $F9, $FB, $D1 ; ... 1
+BonusChanceText_EXTRA_LIFE_1: ; [BR]
+	.db $22, $C8, $10
+	.db $EF, $E2, $DD, $DA, $EC, $FB, $DE, $F1, $ED, $EB, $DA, $EC ; EXTRA LIFE
+	.db $F9, $F9, $F9, $D1 ; ... 1
 	.db $00
 
 BonusChanceBackgroundPalettes:
@@ -622,26 +625,26 @@ BonusChanceUnused_BONUS_CHANCE:
 	.db $FB, $FB, $FB, $FB, $FB, $FB, $FB, $FB
 	.db $00
 
-BonusChanceText_NO_BONUS:
+BonusChanceText_NO_BONUS: ; [BR]
 	.db $22, $86, $14
-	.db $FB, $FB, $FB, $FB, $FB, $FB
-	.db $E7, $E8, $FB, $DB, $E8, $E7, $EE, $EC ; NO BONUS
-	.db $FB, $FB, $FB, $FB, $FB, $FB
+	.db $FB, $FB, $FB, $FB
+	.db $E7, $DE, $E7, $E1, $EE, $E6, $FB, $DB, $F8, $E7, $EE, $EC ; NO BONUS
+	.db $FB, $FB, $FB, $FB
 	.db $00
 
 BonusChanceText_PUSH_A_BUTTON:
 	.db $22, $89, $0E
-	.db $E9, $EE, $EC, $E1, $FB, $0E, $F,$FB, $DB, $EE, $ED, $ED, $E8, $E7 ; PUSH (A) BUTTON
+	.db $FB, $FB, $DA, $E9, $DE, $EB, $ED, $DE, $FB, $FB, $0E, $0F, $FB, $FB ; PUSH (A) BUTTON
 	.db $00
 
 BonusChanceText_PLAYER_1UP:
 	.db $22, $8B, $0B
-	.db $E9, $E5, $DA, $F2, $DE, $EB, $FB, $FB, $D1, $EE, $E9 ; PLAYER  1UP
+	.db $E0, $DA, $E7, $E1, $E8, $EE, $FB, $FB, $D1, $EF, $DD ; PLAYER  1UP
 	.db $00
 
 Text_PAUSE:
 	.db $25, $ED, $05
-	.db $E9, $DA, $EE, $EC, $DE ; PAUSE
+	.db $E9, $DA, $EE, $EC, $DA ; PAUSE
 	.db $27, $DB, $02, $AA, $AA ; attribute data
 	.db $00
 
@@ -667,40 +670,46 @@ Text_PAUSE_Erase:
 	.db $FB, $FB, $FB, $FB, $FB
 	.db $00
 
-TitleCardText:
+TitleCardText: ;[BR]
 	; Level indicator dots
 	.db $25, $0E, $07
 	.db $FB, $FB, $FB, $FB, $FB, $FB, $FB
 	; WORLD  1-1
 	.db $24, $CA, $0B
-	.db $FB, $F0, $E8, $EB, $E5, $DD, $FB, $FB, $D1, $F3, $D1
+	.db $FB, $E6, $EE, $E7, $DD, $E8, $FB, $FB, $D1, $F3, $D1
 	; EXTRA LIFE...  0
 	.db $23, $48, $10
-	.db $DE, $F1, $ED, $EB, $DA, $FB, $E5, $E2, $DF, $DE
-	.db $F9, $F9, $F9, $FB, $FB, $D0
+	.db $EF, $E2, $DD, $DA, $EC, $FB, $DE, $F1, $ED, $EB, $DA, $EC
+	.db $F9, $F9, $F9, $D0
 	.db $00
 
 Text_WARP:
-	.db $21, $8E, $04, $F0, $DA, $EB, $E9
+	.db $21, $8B, $0A, $ED, $EB, $DA, $E7, $EC, $E9, $E8, $EB, $ED, $DE
 
 ; Doki Doki Panic pseudo-leftover
 ; This actually has extra spaces on either end:
 ; "-WORLD-" ... It originally said "CHAPTER"
+; [BR] ... Actually, this is the "WORLD x" used in the WARP screen
 Text_WORLD_1:
-	.db $22, $0C, $09
-	.db $FB, $F0, $E8, $EB, $E5, $DD, $FB, $FB, $D1
+	.db $22, $0B, $09
+	.db $FB, $E6, $EE, $E7, $DD, $E8, $FB, $FB, $D1
 	.db $00
+
+; Continue and Retry bullets duplicates
+; This is used to update the bullet status on-screen
+; whenever Select is pressed
 Text_Unknown6:
 	.db $21, $6A, $01, $FB
 Text_Unknown7:
 	.db $21, $AA, $01, $FB
 	.db $00
+
 Text_Unknown8:
 	.db $21, $97, $C6, $FB
 	.db $00
-UnusedText_THANK_YOU:
+UnusedText_THANK_YOU: ; [BR] freeing 6 bytes
 	.db $21, $0C, $09
-	.db $ED, $E1, $3A, $E7, $E4, $FB, $F2, $E8, $EE
+	.db $ED, $E1, $3A; $E7, $E4, $FB, $F2, $E8, $EE
 UnusedText_Blank214D:
 	.db $21, $4D, $06
 	.db $FB, $FB, $FB, $FB, $FB, $FB
