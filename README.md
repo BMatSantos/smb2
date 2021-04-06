@@ -1,3 +1,8 @@
+# Super Irmãos Mario 2
+Este fork contém todas as minhas edições do disassembly de SMB2 para traduzi-lo para português brasileiro. Logo abaixo segue a descrição original (em inglês).
+
+This fork contains all of my edits on the disassembly of SMB2 in order to translate it to Brazilian Portuguese. Following below is the original description.
+
 # Super Mario Bros. 2, Discombobulated
 [![Logo](tools/logo.png "Logo")](https://xkeeper0.github.io/smb2)\
 A disassembly of Super Mario Bros. 2.
